@@ -15,10 +15,7 @@ public class PlayerController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        _canRun = true;
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -33,5 +30,10 @@ public class PlayerController : MonoBehaviour
         {
             _canRun = false;
         }
+    }
+
+    public void StartToRun()
+    {
+        _canRun = true;
     }
 }

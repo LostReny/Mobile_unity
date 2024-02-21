@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -13,19 +14,21 @@ public class LerpHelper : MonoBehaviour
 
     private Vector3 _pos;
 
-    //public bool _canRunLerp;
+    public GameObject _gameObject;
 
-    //public string EnemyTag = "Enemy";
+    public string EnemyTag = "Enemy";
+
+    public bool _isMoving;
 
 
     private void Start()
     {
-        //_canRunLerp = true;
+        
     }
 
     void Update()
     {
-        //if (!_canRunLerp) return;
+        if (!_isMoving) return;
         PositionPlayer();
 
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
@@ -39,14 +42,17 @@ public class LerpHelper : MonoBehaviour
         _pos.z = transform.position.z;
     }
 
-  /*  public void OnCollisionEnter(Collision collision)
+   public void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == EnemyTag)
         {
-            _canRunLerp = false;
+            _isMoving = false; 
+            Destroy(_gameObject);
         }
-    }*/
-}
+    }
 
-// sem um rigdbody para parar 
-// como posso fazer ele seguir o player e parar quando ele parar ?
+    public void StartMoving()
+    {
+        _isMoving = true;
+    }
+}
