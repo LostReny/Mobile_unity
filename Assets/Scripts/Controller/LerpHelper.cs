@@ -17,6 +17,7 @@ public class LerpHelper : MonoBehaviour
     public GameObject _gameObject;
 
     public string EnemyTag = "Enemy";
+    public string EndLine = "EndLine";
 
     public bool _isMoving;
 
@@ -47,6 +48,15 @@ public class LerpHelper : MonoBehaviour
         if (collision.transform.tag == EnemyTag)
         {
             _isMoving = false; 
+            Destroy(_gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == EndLine)
+        {
+            _isMoving = false;
             Destroy(_gameObject);
         }
     }

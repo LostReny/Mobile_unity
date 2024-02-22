@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
     public float speed = 1f;
     [Header("Tag")]
     public string EnemyTag = "Enemy";
+    public string EndLine = "EndLine";
 
     //private
     [Header("EndGame")]
     public bool _canRun;
 
-
-    // Start is called before the first frame update
+    public GameObject endScreen;
     
 
     // Update is called once per frame
@@ -28,8 +28,22 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.transform.tag == EnemyTag) 
         {
-            _canRun = false;
+            EndGame();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.tag == EndLine)
+        {
+            EndGame();
+        }
+    }
+
+    private void EndGame()
+    {
+        _canRun = false;
+        endScreen.SetActive(true);
     }
 
     public void StartToRun()
