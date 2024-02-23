@@ -4,7 +4,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
-public class LerpHelper : MonoBehaviour
+public class LerpHelper : PlayerController
 {
     public Transform target;
     public float lerpSpeed = 1f;
@@ -16,8 +16,8 @@ public class LerpHelper : MonoBehaviour
 
     public GameObject _gameObject;
 
-    public string EnemyTag = "Enemy";
-    public string EndLine = "EndLine";
+    public string _EnemyTag = "Enemy";
+    public string _EndLine = "EndLine";
 
     public bool _isMoving;
 
@@ -36,14 +36,14 @@ public class LerpHelper : MonoBehaviour
         transform.Translate(transform.forward * speed_p * Time.deltaTime);
     }
 
-    void PositionPlayer()
+    private void PositionPlayer()
     {
         _pos = target.position;
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
     }
 
-   public void OnCollisionEnter(Collision collision)
+   public void OnMCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == EnemyTag)
         {

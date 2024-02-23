@@ -9,11 +9,6 @@ public class ItemCollectBase : MonoBehaviour
     public float timeToHide = 1;
     public GameObject graphicItem;
 
-    
-    //[Header("Sounds")]
-    //public AudioSource audioSource;
-
-
     public void OnTriggerEnter(Collider collision) {
 
         if(collision.transform.CompareTag(compareTag)){
@@ -23,12 +18,12 @@ public class ItemCollectBase : MonoBehaviour
     }
 
     protected virtual void Collect(){
-        OnCollect();
 
-        Destroy(gameObject, 0.5f);
+        OnCollect();
 
         if (graphicItem != null) graphicItem.SetActive(true);
         Invoke("HideObject", timeToHide);
+        Destroy(gameObject, 10f);
     }
 
     private void HideObject()
@@ -39,17 +34,8 @@ public class ItemCollectBase : MonoBehaviour
 
 
     protected virtual void OnCollect()
-{
+    {
 
-       /* if (!audioSource.isPlaying) {
-            audioSource.transform.SetParent(null);
-            audioSource.Play();
-            //Debug.Log("Esta tocando");
-        }*/
-
-        //colocar esse vfs somente para moedas 
-        //criar outro para a vida
-       // VFXManager.Instance.PlayVFXByType(VFXManager.VFXType.COIN, transform.position);
-}
+    }
 
 }
