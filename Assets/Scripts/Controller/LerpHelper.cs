@@ -47,8 +47,11 @@ public class LerpHelper : PlayerController
     {
         if (collision.transform.tag == EnemyTag)
         {
-            _isMoving = false; 
-            Destroy(_gameObject);
+            if (!invincible) 
+            { 
+                _isMoving = false;
+                Destroy(_gameObject); 
+            }
         }
     }
 
@@ -56,8 +59,11 @@ public class LerpHelper : PlayerController
     {
         if (other.transform.tag == EndLine)
         {
+            if(!invincible) 
+            { 
             _isMoving = false;
             Destroy(_gameObject);
+            }
         }
     }
 
