@@ -28,6 +28,11 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Coin Setup")]
     public GameObject coinCollector;
 
+    [Header("Animation")]
+    public AnimatorManager animatorManager;
+    private float _baseSpeedAnim = 4; 
+
+
     private void Start()
     {
         _startPosition = transform.position;
@@ -44,7 +49,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         if(collision.transform.tag == EnemyTag) 
         {
-            if(!invincible) EndGame();
+            if (!invincible)
+            {
+                MoveBack(collision.transform);
+                EndGame(AnimatorManager.AnimatorType.DEAD);
+            }
         }
     }
 
@@ -78,16 +87,22 @@ public class PlayerController : Singleton<PlayerController>
         coinCollector.transform.localScale = Vector3.one * amount;
     }
 
+    private void MoveBack(Transform t)
+    {
+        t.DOMoveZ(1f, .3f).SetRelative();
+    }
 
-    private void EndGame()
+    private void EndGame(AnimatorManager.AnimatorType animationType = AnimatorManager.AnimatorType.IDLE)
     {
         _canRun = false;
         endScreen.SetActive(true);
+        animatorManager.Play(animationType);
     }
 
     public void StartToRun()
     {
         _canRun = true;
+        animatorManager.Play(AnimatorManager.AnimatorType.RUN, _currentSpeed/_baseSpeedAnim);
     }
 
     public void SetPowerUpText(string s)

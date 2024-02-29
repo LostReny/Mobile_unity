@@ -14,13 +14,14 @@ public class AnimatorManager : MonoBehaviour
         DEAD
     }
 
-    public void Play(AnimatorType type)
+    public void Play(AnimatorType type, float _currentSpeedFactor = 1)
     {
         foreach(var animation in animatorSetup)
         {
             if(animation.type == type)
             {
                 animator.SetTrigger(animation.trigger);
+                animator.speed = animation.speed * _currentSpeedFactor;
                 break;
             }
         }
@@ -28,18 +29,7 @@ public class AnimatorManager : MonoBehaviour
 
     public void Update()
     {
-        /*if(Input.GetKeyDown(KeyCode.A))
-        {
-            Play(AnimatorType.RUN);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-           {
-            Play(AnimatorType.IDLE);
-           }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            Play(AnimatorType.DEAD);   
-        }*/
+       
     }
 
 }
@@ -49,4 +39,5 @@ public class AnimatorSetup
 {
     public AnimatorManager.AnimatorType type;
     public string trigger;
+    public float speed = 1f;
 }
