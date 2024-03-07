@@ -168,6 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3671448523560791476}
+  - component: {fileID: 4938353627426294054}
   m_Layer: 0
   m_Name: Piece_coins_01
   m_TagString: Untagged
@@ -192,6 +193,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4938353627426294054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3671448523560791479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffb968990fee3347b14f1b6e654b203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndPiece: {fileID: 3671448522948568123}
 --- !u!1001 &3671448523628290703
 PrefabInstance:
   m_ObjectHideFlags: 0

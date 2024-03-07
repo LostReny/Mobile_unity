@@ -9,8 +9,13 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> levels;
 
     [Header("Level pieces")]
-    public List<GameObject> levelsPieces;
+    public List<LevelPieceBase> levelPieceStart; 
+    public List<LevelPieceBase> levelsPieces;
+    public List<LevelPieceBase> levelPieceEnd;
+
+    public int piecesStartNumber = 1;
     public int piecesNumber = 5;
+    public int piecesEndNumber = 1;
 
 
     [SerializeField] private int _index;
@@ -18,12 +23,13 @@ public class LevelManager : MonoBehaviour
 
 
     // lista das peças já utilizadas 
-    public List<GameObject> _spawnedPieces;
+    public List<LevelPieceBase> _spawnedPieces;
 
 
     public void Awake()
     {
-        SpawnNextLevel();
+        //SpawnNextLevel();
+        CreateLevelP();
     }
 
     private void SpawnNextLevel()
@@ -62,22 +68,33 @@ public class LevelManager : MonoBehaviour
 
     private void CreateLevelP()
     {
-        _spawnedPieces = new List<GameObject>();
+        _spawnedPieces = new List<LevelPieceBase>();
 
-        for(int i = 0; i < piecesNumber; i++)
+        for (int i = 0; i < piecesStartNumber; i++)
         {
-            CreateLevelPiece();
+            CreateLevelPiece(levelPieceStart);
+        }
+
+        for (int i = 0; i < piecesNumber; i++)
+        {
+            CreateLevelPiece(levelsPieces);
+        }
+
+        for (int i = 0; i < piecesEndNumber; i++)
+        {
+            CreateLevelPiece(levelPieceEnd);
         }
     }
     
-    private void CreateLevelPiece()
+    private void CreateLevelPiece(List<LevelPieceBase> list)
     {
-        var piece = levelsPieces[Random.Range(0, levelsPieces.Count)];
+        var piece = list[Random.Range(0, list.Count)];
         var spannedPiece = Instantiate(piece, container);
 
-        if (_spawnedPieces.Count >= 0)
+        if (_spawnedPieces.Count >   0)
         {
-            //_spawnedPieces[_spawnedPieces.Count - 1]
+            var lastPiece = _spawnedPieces[_spawnedPieces.Count - 1];
+            spannedPiece.transform.position = lastPiece.EndPiece.position;
         }
 
         _spawnedPieces.Add(spannedPiece);
