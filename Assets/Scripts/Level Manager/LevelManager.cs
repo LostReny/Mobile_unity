@@ -124,6 +124,11 @@ public class LevelManager : MonoBehaviour
             spannedPiece.transform.localPosition = Vector3.zero; 
         }
 
+        /*foreach (var p in spannedPiece.GetComponentInChildren<ArtPiece>()) 
+        {
+            p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType).gameObject);
+        }*/
+
         _spawnedPieces.Add(spannedPiece);
     }
 

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Singleton;
 
-public class ArtManager : MonoBehaviour
+public class ArtManager : Singleton<ArtManager>
 {
     public enum ArtType
     {
@@ -12,6 +13,12 @@ public class ArtManager : MonoBehaviour
     }
 
     public List<ArtSetup> artSetups;
+
+
+   /* public ArtSetup GetSetupByType(ArtType artType)
+    {
+        return artSetups.ForEach(i => i.artType = artType);
+    }*/
 }
 
 

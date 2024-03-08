@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class LevelPieceSetup : ScriptableObject
 {
+    public ArtManager.ArtType artType; 
+
+
     [Header("Level pieces")]
     public List<LevelPieceBase> levelPieceStart;
     public List<LevelPieceBase> levelsPieces;
