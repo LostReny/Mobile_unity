@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
     private LevelPieceSetup _currSet;
 
-    public ArtPiece artpiece;
+    public float timeBetweenPieces = 5f;
 
 
     // -------------------------
@@ -126,15 +126,13 @@ public class LevelManager : MonoBehaviour
             spannedPiece.transform.localPosition = Vector3.zero; 
         }
 
-        if (spannedPiece is IEnumerable) 
-        {
-            foreach (var p in (IEnumerable)spannedPiece.GetComponentInChildren<ArtPiece>())
-            {
-                p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType).gameObject);
-            }
-        }
         
-
+       /* foreach (var p in spannedPiece.GetComponentInChildren<ArtPiece>())
+        {
+           p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType).gameObject);
+        }*/
+        
+  
         _spawnedPieces.Add(spannedPiece);
     }
 
@@ -147,6 +145,18 @@ public class LevelManager : MonoBehaviour
         }
 
         _spawnedPieces.Clear();
+    }
+
+
+    IEnumerator CreateLevelCoroutine()
+    {
+        _spawnedPieces = new List<LevelPieceBase>();
+         
+        for (int i = 0; i < _currSet.piecesNumber; i++)
+        {
+            CreateLevelPiece(_currSet.levelsPieces);
+            yield return new WaitForSeconds(timeBetweenPieces);
+        } 
     }
 
     #endregion
