@@ -29,6 +29,8 @@ public class LevelManager : MonoBehaviour
 
     private LevelPieceSetup _currSet;
 
+    public ArtPiece artpiece;
+
 
     // -------------------------
 
@@ -114,7 +116,7 @@ public class LevelManager : MonoBehaviour
         var piece = list[Random.Range(0, list.Count)];
         var spannedPiece = Instantiate(piece, container);
 
-        if (_spawnedPieces.Count >   0)
+        if (_spawnedPieces.Count > 0)
         {
             var lastPiece = _spawnedPieces[_spawnedPieces.Count - 1];
             spannedPiece.transform.position = lastPiece.EndPiece.position;
@@ -124,10 +126,14 @@ public class LevelManager : MonoBehaviour
             spannedPiece.transform.localPosition = Vector3.zero; 
         }
 
-        /*foreach (var p in spannedPiece.GetComponentInChildren<ArtPiece>()) 
+        if (spannedPiece is IEnumerable) 
         {
-            p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType).gameObject);
-        }*/
+            foreach (var p in (IEnumerable)spannedPiece.GetComponentInChildren<ArtPiece>())
+            {
+                p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType).gameObject);
+            }
+        }
+        
 
         _spawnedPieces.Add(spannedPiece);
     }

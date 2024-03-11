@@ -15,10 +15,10 @@ public class ArtManager : Singleton<ArtManager>
     public List<ArtSetup> artSetups;
 
 
-   /* public ArtSetup GetSetupByType(ArtType artType)
+    public ArtSetup GetSetupByType(ArtType artType)
     {
         return artSetups.ForEach(i => i.artType = artType);
-    }*/
+    }
 }
 
 
