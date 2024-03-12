@@ -26,7 +26,6 @@ public class ArtManager : Singleton<ArtManager>
 [System.Serializable]
 public class ArtSetup
 {
- 
   public ArtManager.ArtType artType;
   public GameObject gameObject;
 }

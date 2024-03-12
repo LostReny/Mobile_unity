@@ -28,7 +28,7 @@ public class ArtPiece : MonoBehaviour
         // Destroy the previous instantiated object if it exists
         if (currentArt != null)
         {
-            Destroy(currentArt);
+             Destroy(currentArt);
         }
 
         // Set the new instance as the currentArt
