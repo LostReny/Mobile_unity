@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentArt: {fileID: 0}
+  artContainer: {fileID: 908458159350142944}
