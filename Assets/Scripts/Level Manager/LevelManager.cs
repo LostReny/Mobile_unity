@@ -126,13 +126,23 @@ public class LevelManager : MonoBehaviour
             spannedPiece.transform.localPosition = Vector3.zero; 
         }
 
-        
-       /* foreach (var p in spannedPiece.GetComponentInChildren<ArtPiece>())
+        /*foreach (var p in spannedPiece.GetComponentInChildren<ArtPiece>())
         {
-           p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType).gameObject);
+            p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType).gameObject);
         }*/
-        
-  
+
+        /*var artPiece = spannedPiece.GetComponentInChildren<ArtPiece>();
+        if (artPiece != null)
+        {
+            artPiece.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType).gameObject);
+        }*/
+
+        var artPieces = spannedPiece.GetComponentsInChildren<ArtPiece>();
+        foreach (var p in artPieces)
+        {
+            p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSet.artType)?.gameObject);
+        }
+
         _spawnedPieces.Add(spannedPiece);
     }
 

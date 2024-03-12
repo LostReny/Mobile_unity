@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce721703f2a63e24d8e6d9c1eb5c1b8b, type: 3}
   m_Name: Level01
   m_EditorClassIdentifier: 
-  artType: 0
+  artType: 2
   levelPieceStart:
   - {fileID: 2402299352423891443, guid: f71567df7ce46a3428c27c065c7aec47, type: 3}
   levelsPieces:

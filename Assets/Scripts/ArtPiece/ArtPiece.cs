@@ -9,9 +9,10 @@ public class ArtPiece : MonoBehaviour
 
     public void ChangePiece(GameObject piece)
     {
-        if (currentArt != null) Destroy(currentArt);
 
-        currentArt = Instantiate(piece, transform);
+        if (currentArt != null) DestroyImmediate(currentArt);
+
+        currentArt = Instantiate(piece, transform.position, transform.rotation, transform.parent);
         currentArt.transform.localPosition = Vector3.zero;
     }
 }

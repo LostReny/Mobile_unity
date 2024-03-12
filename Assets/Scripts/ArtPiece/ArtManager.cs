@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Singleton;
+using System.Linq;
 
 public class ArtManager : Singleton<ArtManager>
 {
@@ -15,16 +16,17 @@ public class ArtManager : Singleton<ArtManager>
     public List<ArtSetup> artSetups;
 
 
-   /* public ArtSetup GetSetupByType(ArtType artType)
+    public ArtSetup GetSetupByType(ArtType artType)
     {
-        return artSetups.ForEach(i => i.artType = artType);
-    }*/
+        return artSetups.FirstOrDefault(i => i.artType == artType);
+    }
 }
 
 
 [System.Serializable]
 public class ArtSetup
 {
-   public ArtManager.ArtType artType;
-   public GameObject gameObject;
+ 
+  public ArtManager.ArtType artType;
+  public GameObject gameObject;
 }
