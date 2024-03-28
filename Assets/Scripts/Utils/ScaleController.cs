@@ -11,7 +11,7 @@ public class ScaleController : MonoBehaviour
     {
         _playerController.transform.localScale = Vector3.zero;
        // var _currentScale = _playerController.transform.localScale;
-       // não pode ser vector 3 
+       // nï¿½o pode ser vector 3 
        // como transformar em int?
 
         yield return null;
