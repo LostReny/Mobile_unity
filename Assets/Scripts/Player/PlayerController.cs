@@ -30,8 +30,7 @@ public class PlayerController : Singleton<PlayerController>
 
     [Header("Animation")]
     public AnimatorManager animatorManager;
-    private float _baseSpeedAnim = 4; 
-
+    private float _baseSpeedAnim = 4;
 
     private void Start()
     {
