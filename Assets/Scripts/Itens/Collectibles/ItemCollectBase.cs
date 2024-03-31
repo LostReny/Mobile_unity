@@ -17,6 +17,11 @@ public class ItemCollectBase : MonoBehaviour
         
     }
 
+    public void Start()
+    {
+        CoinsAnimationManager.Instance.RegisterCoin(this);
+    }
+
     protected virtual void Collect(){
 
         OnCollect();
@@ -38,4 +43,8 @@ public class ItemCollectBase : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        CoinsAnimationManager.Instance.UnRegisterCoin(this);
+    }
 }

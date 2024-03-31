@@ -11,10 +11,7 @@ public class ItemCollectCoin : ItemCollectBase
     public float minDistance = 1f;
 
 
-    private void Start()
-    {
-        //CoinsAnimationManager.Instance.RegisterCoin(this);
-    }
+    
 
     protected override void OnCollect()
     {

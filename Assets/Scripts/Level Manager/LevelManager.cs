@@ -111,6 +111,7 @@ public class LevelManager : MonoBehaviour
         }
 
         ColorManager.Instance.ChangeColorByType(_currSet.artType);
+        CoinsAnimationManager.Instance.StartAnimations();
     }
     
     private void CreateLevelPiece(List<LevelPieceBase> list)
