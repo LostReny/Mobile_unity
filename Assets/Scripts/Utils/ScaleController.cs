@@ -45,7 +45,7 @@ public class ScaleController : MonoBehaviour
 
    public void Bounce()
    {
-
-        _playerController.transform.DOScale(scaleBounce, scaleDuration).SetEase(ease).SetLoops(2, LoopType.Yoyo);
+        _playerController.transform.localScale = normalSize; 
+        _playerController.transform.DOScale(scaleBounce, scaleDuration).SetEase(Ease.InOutBack).SetLoops(2, LoopType.Yoyo);
    }
 }
