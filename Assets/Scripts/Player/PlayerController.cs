@@ -32,9 +32,6 @@ public class PlayerController : Singleton<PlayerController>
     public AnimatorManager animatorManager;
     private float _baseSpeedAnim = 4;
 
-    [Header("Bounce")]
-    [SerializeField] private ScaleController _scaleController;
-
     private void Start()
     {
         _startPosition = transform.position;
@@ -48,11 +45,6 @@ public class PlayerController : Singleton<PlayerController>
     }
 
 
-    public void BounceEffect()
-    {   
-        if(_scaleController !=null)
-            _scaleController.Bounce();
-    }
 
     public void OnCollisionEnter(Collision collision)
     {

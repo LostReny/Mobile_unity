@@ -17,6 +17,9 @@ public class CoinsAnimationManager : Singleton<CoinsAnimationManager>
     public float scaleTimeBetweenPieces;
     public Ease ease = Ease.OutBack;
 
+     [Header("Bounce")]
+    [SerializeField] private ScaleController _scaleController;
+
     private void Start()
     {
         itens = new List<ItemCollectBase>();
@@ -68,4 +71,11 @@ public class CoinsAnimationManager : Singleton<CoinsAnimationManager>
             itens.Remove(p);
         }
     }
+
+    public void BounceEffect()
+    {   
+        if(_scaleController !=null)
+            _scaleController.Bounce();
+    }
+    
 }

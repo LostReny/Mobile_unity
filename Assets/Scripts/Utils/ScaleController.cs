@@ -46,6 +46,6 @@ public class ScaleController : MonoBehaviour
    public void Bounce()
    {
 
-        transform.DOScale(scaleBounce, scaleDuration).SetEase(ease).SetLoops(2, LoopType.Yoyo);
+        _playerController.transform.DOScale(scaleBounce, scaleDuration).SetEase(ease).SetLoops(2, LoopType.Yoyo);
    }
 }

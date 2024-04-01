@@ -170,6 +170,7 @@ MonoBehaviour:
   scaleDuration: 0.5
   scaleTimeBetweenPieces: 0.3
   ease: 27
+  _scaleController: {fileID: 1136617791}
 --- !u!1 &299287481
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +439,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425378401}
-  m_LocalRotation: {x: 0.12976822, y: -0.06903316, z: 0.009057062, w: 0.9890969}
+  m_LocalRotation: {x: 0.12976822, y: -0.069033146, z: 0.00905706, w: 0.9890969}
   m_LocalPosition: {x: 0.93, y: 3.8857746, z: -16.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1122,7 +1123,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.12976822, y: -0.06903316, z: 0.009057062, w: 0.9890969}
+  m_LocalRotation: {x: 0.12976822, y: -0.069033146, z: 0.00905706, w: 0.9890969}
   m_LocalPosition: {x: 0.93, y: 3.8857746, z: -16.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1409,7 +1410,7 @@ MonoBehaviour:
   startSmall: {x: 0, y: 0, z: 0}
   normalSize: {x: 1, y: 1, z: 1}
   ease: 27
-  scaleDuration: 0.02
+  scaleDuration: 0.2
   scaleBounce: 0.5
 --- !u!4 &1136617792
 Transform:
