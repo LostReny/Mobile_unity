@@ -15,6 +15,10 @@ public class ScaleController : MonoBehaviour
     [Header("Ease")]
     public Ease ease = Ease.OutBack;
 
+    [Header("Animation")]
+   public float scaleDuration;
+   public float scaleBounce;
+
 
     void Start()
     {
@@ -28,7 +32,20 @@ public class ScaleController : MonoBehaviour
 
 
         _playerController.transform.DOScale(normalSize, duration).SetEase(ease);
-        yield break;
+        yield return null;
      
     }
+
+    private void Update()
+   {
+        if(Input.GetKeyDown(KeyCode.M)){
+            Bounce();
+        }
+   }
+
+   public void Bounce()
+   {
+
+        transform.DOScale(scaleBounce, scaleDuration).SetEase(ease).SetLoops(2, LoopType.Yoyo);
+   }
 }

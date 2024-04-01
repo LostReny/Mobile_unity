@@ -28,6 +28,7 @@ public class ItemCollectBase : MonoBehaviour
 
         if (graphicItem != null) graphicItem.SetActive(true);
         Invoke("HideObject", timeToHide);
+        PlayerController.Instance.BounceEffect();
         Destroy(gameObject, 10f);
     }
 

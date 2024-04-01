@@ -9,7 +9,7 @@ public class CoinsAnimationManager : Singleton<CoinsAnimationManager>
 {
     // toda vez que uma moeda for usada - vai ser instanciada aqui 
     // pq estamos usando um songleton
-    // singleton - design pattern - vai acessado várias vezes no projeto
+    // singleton - design pattern - vai acessado vï¿½rias vezes no projeto
 
     public List<ItemCollectBase> itens;
 
@@ -59,6 +59,7 @@ public class CoinsAnimationManager : Singleton<CoinsAnimationManager>
     {
         itens = itens.OrderBy(x => Vector3.Distance(transform.position, x.transform.position)).ToList();
     }
+
 
     public void UnRegisterCoin(ItemCollectBase p)
     {
