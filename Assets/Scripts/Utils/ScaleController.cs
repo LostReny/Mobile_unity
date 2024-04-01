@@ -38,9 +38,9 @@ public class ScaleController : MonoBehaviour
 
     private void Update()
    {
-        if(Input.GetKeyDown(KeyCode.M)){
+        /*if(Input.GetKeyDown(KeyCode.M)){
             Bounce();
-        }
+        }*/
    }
 
    public void Bounce()
