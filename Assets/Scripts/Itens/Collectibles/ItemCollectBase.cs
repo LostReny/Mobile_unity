@@ -9,6 +9,8 @@ public class ItemCollectBase : MonoBehaviour
     public float timeToHide = 1;
     public GameObject graphicItem;
 
+    public ParticleSystem _particleSystem;
+
     public void OnTriggerEnter(Collider collision) {
 
         if(collision.transform.CompareTag(compareTag)){
@@ -25,7 +27,7 @@ public class ItemCollectBase : MonoBehaviour
     protected virtual void Collect(){
 
         OnCollect();
-
+        //if(_particleSystem != null) _particleSystem.Play();
         if (graphicItem != null) graphicItem.SetActive(true);
         Invoke("HideObject", timeToHide);
         CoinsAnimationManager.Instance.BounceEffect();
@@ -41,7 +43,7 @@ public class ItemCollectBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-
+       // if(_particleSystem != null) _particleSystem.Play();
     }
 
     private void OnDestroy()

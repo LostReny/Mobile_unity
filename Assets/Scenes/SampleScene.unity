@@ -439,7 +439,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425378401}
-  m_LocalRotation: {x: 0.12976822, y: -0.06903316, z: 0.009057062, w: 0.9890969}
+  m_LocalRotation: {x: 0.12976822, y: -0.069033146, z: 0.00905706, w: 0.9890969}
   m_LocalPosition: {x: 0.93, y: 3.8857746, z: -16.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1154,7 +1154,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.12976822, y: -0.06903316, z: 0.009057062, w: 0.9890969}
+  m_LocalRotation: {x: 0.12976822, y: -0.069033146, z: 0.00905706, w: 0.9890969}
   m_LocalPosition: {x: 0.93, y: 3.8857746, z: -16.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2327,7 +2327,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.8
+  m_Time: 0.7
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -2335,8 +2335,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.19463348
+        time: 0.0029525757
+        value: 0.22818756
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2344,17 +2344,17 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.49814746
-        value: 0.33768117
-        inSlope: -0.51474553
-        outSlope: -0.51474553
+        time: 0.50110096
+        value: 0.3376813
+        inSlope: -1.5411314
+        outSlope: -1.5411314
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.29395455
+        outWeight: 0.17628035
       - serializedVersion: 3
         time: 1
-        value: 0
+        value: 0.046982322
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2382,8 +2382,8 @@ TrailRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
-      atime1: 47802
+      atime0: 11180
+      atime1: 65535
       atime2: 0
       atime3: 0
       atime4: 0
@@ -2396,7 +2396,7 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 3
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.1
