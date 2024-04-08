@@ -9,6 +9,7 @@ public class ItemCollectBase : MonoBehaviour
     public float timeToHide = 1;
     public GameObject graphicItem;
 
+    [Header("Particle system")]
     public ParticleSystem _particleSystem;
 
     public void OnTriggerEnter(Collider collision) {
@@ -19,6 +20,7 @@ public class ItemCollectBase : MonoBehaviour
         
     }
 
+
     public void Start()
     {
         CoinsAnimationManager.Instance.RegisterCoin(this);
@@ -27,9 +29,14 @@ public class ItemCollectBase : MonoBehaviour
     protected virtual void Collect(){
 
         OnCollect();
-        //if(_particleSystem != null) _particleSystem.Play();
-        if (graphicItem != null) graphicItem.SetActive(true);
+        if(_particleSystem != null) _particleSystem.Play();
+
+        // particle system não está funcionando
+        // qual o problema ?
+        // necessário colocar ela em outro lugar ?
+        
         Invoke("HideObject", timeToHide);
+        if (graphicItem != null) graphicItem.SetActive(false);
         CoinsAnimationManager.Instance.BounceEffect();
         Destroy(gameObject, 10f);
     }
@@ -43,7 +50,7 @@ public class ItemCollectBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-       // if(_particleSystem != null) _particleSystem.Play();
+        
     }
 
     private void OnDestroy()

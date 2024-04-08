@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 528115681346301939}
   m_Layer: 0
   m_Name: PFB_Coin
-  m_TagString: Untagged
+  m_TagString: CoinCollector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,10 +164,10 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4654550884560572743}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6984972
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4654550884560572742
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compareTag: CoinCollector
-  timeToHide: 0
+  timeToHide: 20
   graphicItem: {fileID: 4654550884560572743}
   _particleSystem: {fileID: 2136960141777701216, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
 --- !u!23 &528115681346301939
@@ -233,6 +233,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4654550884560572738}
     m_Modifications:
+    - target: {fileID: 2136960141777701216, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136960141777701216, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136960141777701216, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
+      propertyPath: scalingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2136960141777701217, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
       propertyPath: m_RootOrder
       value: 1
