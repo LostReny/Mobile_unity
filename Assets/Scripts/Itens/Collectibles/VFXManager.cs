@@ -24,6 +24,10 @@ public class VFXManager : Singleton<VFXManager>
             }
         }
     }
+
+    public void Start(){
+        
+    }
 }
 
 [System.Serializable]

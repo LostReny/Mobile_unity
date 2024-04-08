@@ -6,16 +6,20 @@ public class ItemCollectBase : MonoBehaviour
 {
     public string compareTag = "Player";
 
+    //public string _compareTagCoin = "CoinCollector";
+
     public float timeToHide = 1;
     public GameObject graphicItem;
 
-    [Header("Particle system")]
+    //[Header("Particle system")]
+    //public VFXManager vFXManager;
     public ParticleSystem _particleSystem;
 
     public void OnTriggerEnter(Collider collision) {
 
         if(collision.transform.CompareTag(compareTag)){
             Collect();
+            //if(_particleSystem != null) _particleSystem.Play();
         }
         
     }
@@ -29,16 +33,15 @@ public class ItemCollectBase : MonoBehaviour
     protected virtual void Collect(){
 
         OnCollect();
-        if(_particleSystem != null) _particleSystem.Play();
 
+        Destroy(gameObject, 10f);
         // particle system não está funcionando
         // qual o problema ?
         // necessário colocar ela em outro lugar ?
         
-        Invoke("HideObject", timeToHide);
         if (graphicItem != null) graphicItem.SetActive(false);
+        Invoke("HideObject", timeToHide);
         CoinsAnimationManager.Instance.BounceEffect();
-        Destroy(gameObject, 10f);
     }
 
     private void HideObject()
@@ -50,7 +53,7 @@ public class ItemCollectBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-        
+        VFXManager.Instance.PlayVFXByType(VFXManager.VFXType.COIN, transform.position);
     }
 
     private void OnDestroy()

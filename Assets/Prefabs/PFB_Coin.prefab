@@ -182,7 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compareTag: CoinCollector
-  timeToHide: 20
+  _compareTag: CoinCollector
+  timeToHide: 5
   graphicItem: {fileID: 4654550884560572743}
   _particleSystem: {fileID: 2136960141777701216, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
 --- !u!23 &528115681346301939
@@ -233,18 +234,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4654550884560572738}
     m_Modifications:
-    - target: {fileID: 2136960141777701216, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
-      propertyPath: stopAction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136960141777701216, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136960141777701216, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
-      propertyPath: scalingMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2136960141777701217, guid: 96d7dbd78866fed4fbb8921e0fe12296, type: 3}
       propertyPath: m_RootOrder
       value: 1
