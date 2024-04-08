@@ -7,7 +7,7 @@ public class VFXManager : Singleton<VFXManager>
 {
     public enum VFXType
     {
-        COIN
+        COIN,
     }
 
     public List<VFXManagerSetup> vfxSetup;
@@ -22,12 +22,10 @@ public class VFXManager : Singleton<VFXManager>
                 item.transform.position = position;
                 break;
             }
+
         }
     }
 
-    public void Start(){
-        
-    }
 }
 
 [System.Serializable]

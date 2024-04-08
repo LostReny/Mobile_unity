@@ -19,7 +19,6 @@ public class ItemCollectBase : MonoBehaviour
 
         if(collision.transform.CompareTag(compareTag)){
             Collect();
-            //if(_particleSystem != null) _particleSystem.Play();
         }
         
     }
@@ -34,7 +33,6 @@ public class ItemCollectBase : MonoBehaviour
 
         OnCollect();
 
-        Destroy(gameObject, 10f);
         // particle system não está funcionando
         // qual o problema ?
         // necessário colocar ela em outro lugar ?
@@ -42,6 +40,7 @@ public class ItemCollectBase : MonoBehaviour
         if (graphicItem != null) graphicItem.SetActive(false);
         Invoke("HideObject", timeToHide);
         CoinsAnimationManager.Instance.BounceEffect();
+        Destroy(gameObject, 10f);
     }
 
     private void HideObject()
