@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ItemCollectBase : MonoBehaviour
 {
     public string compareTag = "Player";
@@ -11,7 +12,7 @@ public class ItemCollectBase : MonoBehaviour
     public float timeToHide = 1;
     public GameObject graphicItem;
 
-    //[Header("Particle system")]
+    [Header("Particle system")]
     //public VFXManager vFXManager;
     public ParticleSystem _particleSystem;
 
@@ -32,12 +33,7 @@ public class ItemCollectBase : MonoBehaviour
     protected virtual void Collect(){
 
         OnCollect();
-
-        // particle system não está funcionando
-        // qual o problema ?
-        // necessário colocar ela em outro lugar ?
-        
-        if (graphicItem != null) graphicItem.SetActive(false);
+        //if (graphicItem != null) graphicItem.SetActive(false);
         Invoke("HideObject", timeToHide);
         CoinsAnimationManager.Instance.BounceEffect();
         Destroy(gameObject, 10f);
@@ -52,7 +48,9 @@ public class ItemCollectBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-        VFXManager.Instance.PlayVFXByType(VFXManager.VFXType.COIN, transform.position);
+        if(_particleSystem != null) _particleSystem.Play();
+        Debug.Log("é pra tocar particle system");
+        //VFXManager.Instance.PlayVFXByType(VFXManager.VFXType.COIN, transform.position);
     }
 
     private void OnDestroy()
