@@ -7,13 +7,10 @@ public class ItemCollectBase : MonoBehaviour
 {
     public string compareTag = "Player";
 
-    //public string _compareTagCoin = "CoinCollector";
-
     public float timeToHide = 1;
     public GameObject graphicItem;
 
     [Header("Particle system")]
-    //public VFXManager vFXManager;
     public ParticleSystem _particleSystem;
 
     public void OnTriggerEnter(Collider collision) {
@@ -33,7 +30,7 @@ public class ItemCollectBase : MonoBehaviour
     protected virtual void Collect(){
 
         OnCollect();
-        //if (graphicItem != null) graphicItem.SetActive(false);
+        
         Invoke("HideObject", timeToHide);
         CoinsAnimationManager.Instance.BounceEffect();
         Destroy(gameObject, 10f);
@@ -49,8 +46,6 @@ public class ItemCollectBase : MonoBehaviour
     protected virtual void OnCollect()
     {
         if(_particleSystem != null) _particleSystem.Play();
-        Debug.Log("é pra tocar particle system");
-        //VFXManager.Instance.PlayVFXByType(VFXManager.VFXType.COIN, transform.position);
     }
 
     private void OnDestroy()

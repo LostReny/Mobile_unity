@@ -32,6 +32,9 @@ public class PlayerController : Singleton<PlayerController>
     public AnimatorManager animatorManager;
     private float _baseSpeedAnim = 4;
 
+    [Header("Particle System Dead")]
+    public ParticleSystem _deadParticle;
+
     private void Start()
     {
         _startPosition = transform.position;
@@ -54,6 +57,7 @@ public class PlayerController : Singleton<PlayerController>
             {
                 MoveBack(collision.transform);
                 EndGame(AnimatorManager.AnimatorType.DEAD);
+                if(_deadParticle != null)_deadParticle.Play();
             }
         }
     }
